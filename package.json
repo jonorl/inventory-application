@@ -11,8 +11,5 @@
     "pg": "^8.14.1"
   },
   "name": "load-db",
-  "version": "1.0.0",
-  "scripts": {
-
-  }
+  "version": "1.0.0"
 }
