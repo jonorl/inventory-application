@@ -5,15 +5,9 @@ const mainController = require("../controllers/mainController");
 
 const mainRouter = Router();
 
-mainRouter.get("/", mainController.getUsernames);
+mainRouter.get("/", mainController.getCategories);
 
-mainRouter.get("/new", mainController.createUsernameGet);
-
-mainRouter.post("/new", mainController.createUsernamePost);
-
-mainRouter.get("/search",mainController.searchUserPost)
-
-mainRouter.get("/delete",mainController.deleteGet)
+mainRouter.get("/consoles", mainController.getConsoles);
 
 // Always export back to app.js at the end
 
