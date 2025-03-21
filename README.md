@@ -1,2 +1,2 @@
-# mini-message-board
-Mini message board for The Odin Project
+# Inventory Application
+Inventory Applications for The Odin Project
