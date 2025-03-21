@@ -13,6 +13,6 @@
   "name": "load-db",
   "version": "1.0.0",
   "scripts": {
-    "start": "node db/populatedb.js"
+
   }
 }
