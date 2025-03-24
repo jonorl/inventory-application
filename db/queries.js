@@ -5,12 +5,22 @@ async function getAllCategories() {
   return rows;
 }
 
+async function insertCategory(name) {
+    await pool.query("INSERT INTO categories (name) VALUES ($1)", [name]);
+}
+
 async function getAllConsoles() {
   const { rows } = await pool.query("SELECT * FROM consoles");
   return rows;
 }
 
+async function insertConsole(name, categoryId) {
+  await pool.query("INSERT INTO consoles (name, category_id) VALUES ($1, $2)", [name, categoryId]);
+}
+
 module.exports = {
   getAllCategories,
   getAllConsoles,
+  insertCategory,
+  insertConsole,
   };

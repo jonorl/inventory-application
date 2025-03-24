@@ -7,7 +7,11 @@ const mainRouter = Router();
 
 mainRouter.get("/", mainController.getCategories);
 
+mainRouter.post("/addCategory", mainController.postCategories);
+
 mainRouter.get("/consoles", mainController.getConsoles);
+
+mainRouter.post("/addConsole", mainController.postConsoles);
 
 // Always export back to app.js at the end
 

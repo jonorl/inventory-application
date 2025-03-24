@@ -7,7 +7,14 @@
   </head>
   <body>
     <h1 class="title"><%=title%></h1>
-    <p><%=consoles%></p>
+    <p><%=consoles%> category:<%=categoryId%></p>
+    <form method="POST" action="/addConsole" class="form">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br />
+      <label for="categoryId">Category:</label><br />
+      <input type="number" id="categoryId" name="categoryId" /><br />
+      <button class="submit" id="submit">Submit</button>
+    </form>
     </div>
   </body>
 </html>
