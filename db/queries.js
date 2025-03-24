@@ -14,8 +14,8 @@ async function getAllConsoles() {
   return rows;
 }
 
-async function insertConsole(name, categoryId) {
-  await pool.query("INSERT INTO consoles (name, category_id) VALUES ($1, $2)", [name, categoryId]);
+async function insertConsole(name, releaseYr, stock, categoryId) {
+  await pool.query("INSERT INTO consoles (name, release_yr, stock, category_id) VALUES ($1, $2, $3, $4)", [name, releaseYr, stock, categoryId]);
 }
 
 module.exports = {

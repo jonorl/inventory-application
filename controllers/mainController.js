@@ -20,15 +20,16 @@ async function getConsoles(req, res) {
   const consoles = await db.getAllConsoles();
   res.render("consoles", {
     title: "Consoles",
-    consoles: consoles.map((con) => con.name).join(", "),
-    categoryId: consoles.map((con) => con.category_id).join(", "),
+    consoles: consoles,
   })
 }
 
 async function postConsoles(req,res) {
   const { name } = req.body;
+  const { releaseYr } = req.body;
+  const { stock } = req.body;
   const { categoryId } = req.body;
-  await db.insertConsole(name, categoryId);
+  await db.insertConsole(name, releaseYr, stock, categoryId);
   res.redirect("/consoles");
 }
 
