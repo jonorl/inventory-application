@@ -2,6 +2,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title><%= title %></title>
   </head>
@@ -19,13 +23,15 @@
       </thead>
       <tbody>
         <% consoles.forEach(console => { %>
-          <tr>
-            <td><%= console.name %></td>
-            <td><%= console.category_id %></td>
-            <td><%= console.release_yr %></td>
-            <td><%= console.stock %></td>
-            <td>delete icon</td>
-          </tr>
+        <tr>
+          <td><%= console.name %></td>
+          <td><%= console.category_id %></td>
+          <td><%= console.release_yr %></td>
+          <td><%= console.stock %></td>
+          <td>  <a href="/delConsole/<%= console.id %>">
+            <i id="<%= console.id %>" class="fas fa-trash-alt"></i>
+          </a></td> 
+        </tr>
         <% }); %>
       </tbody>
     </table>
@@ -33,13 +39,19 @@
       <label for="name">Name:</label><br />
       <input type="text" id="name" name="name" /><br />
       <label for="releaseYr">Release Year:</label><br />
-      <input type="number" id="releaseYr" name="releaseYr" min="1950" max="2025" step="1" />
+      <input
+        type="number"
+        id="releaseYr"
+        name="releaseYr"
+        min="1950"
+        max="2025"
+        step="1"
+      />
       <label for="stock">Stock:</label><br />
       <input type="number" id="stock" name="stock" /><br />
       <label for="categoryId">Category:</label><br />
       <input type="number" id="categoryId" min="0" name="categoryId" /><br />
       <button class="submit" id="submit">Submit</button>
     </form>
-    </div>
   </body>
 </html>

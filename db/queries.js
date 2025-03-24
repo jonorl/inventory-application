@@ -18,9 +18,14 @@ async function insertConsole(name, releaseYr, stock, categoryId) {
   await pool.query("INSERT INTO consoles (name, release_yr, stock, category_id) VALUES ($1, $2, $3, $4)", [name, releaseYr, stock, categoryId]);
 }
 
+async function delConsole(id) {
+  await pool.query("DELETE FROM consoles WHERE id = $1", [id]);
+}
+
 module.exports = {
   getAllCategories,
   getAllConsoles,
   insertCategory,
   insertConsole,
+  delConsole,
   };

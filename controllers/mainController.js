@@ -33,9 +33,16 @@ async function postConsoles(req,res) {
   res.redirect("/consoles");
 }
 
+async function delConsoles(req,res) {
+  const { id } = req.params;
+  await db.delConsole(id);
+  res.redirect("/consoles");
+}
+
 module.exports = {
   getCategories,
   getConsoles,
   postCategories,
   postConsoles,
+  delConsoles,
 };
