@@ -25,9 +25,9 @@
         <% consoles.forEach(console => { %>
         <tr>
           <td><%= console.name %></td>
-          <td><%= console.category_id %></td>
           <td><%= console.release_yr %></td>
           <td><%= console.stock %></td>
+          <td><%= console.category_id %></td>
           <td>  <a href="/delConsole/<%= console.id %>">
             <i id="<%= console.id %>" class="fas fa-trash-alt"></i>
           </a></td> 

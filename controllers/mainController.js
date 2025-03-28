@@ -6,7 +6,8 @@ async function getCategories(req, res) {
   const categories = await db.getAllCategories();
   res.render("categories", {
     title: "Categories",
-    categories: categories.map((cat) => cat.name).join(", "),
+    // categories: categories.map((cat) => cat.name).join(", "),
+    categories: categories,
   })
 }
 
