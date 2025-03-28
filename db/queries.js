@@ -22,10 +22,15 @@ async function delConsole(id) {
   await pool.query("DELETE FROM consoles WHERE id = $1", [id]);
 }
 
+async function delCategory(id) {
+  await pool.query("DELETE FROM categories WHERE id = $1", [id]);
+}
+
 module.exports = {
   getAllCategories,
   getAllConsoles,
   insertCategory,
   insertConsole,
   delConsole,
+  delCategory,
   };

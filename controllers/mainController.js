@@ -6,7 +6,6 @@ async function getCategories(req, res) {
   const categories = await db.getAllCategories();
   res.render("categories", {
     title: "Categories",
-    // categories: categories.map((cat) => cat.name).join(", "),
     categories: categories,
   })
 }
@@ -40,10 +39,17 @@ async function delConsoles(req,res) {
   res.redirect("/consoles");
 }
 
+async function delCategory(req,res) {
+  const { id } = req.params;
+  await db.delCategory(id);
+  res.redirect("/");
+}
+
 module.exports = {
   getCategories,
   getConsoles,
   postCategories,
   postConsoles,
   delConsoles,
+  delCategory,
 };

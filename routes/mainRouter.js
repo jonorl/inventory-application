@@ -15,6 +15,8 @@ mainRouter.post("/addConsole", mainController.postConsoles);
 
 mainRouter.get("/delConsole/:id", mainController.delConsoles);
 
+mainRouter.get("/delCategory/:id", mainController.delCategory);
+
 // Always export back to app.js at the end
 
 module.exports = mainRouter;
