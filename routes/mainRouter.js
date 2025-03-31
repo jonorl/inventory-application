@@ -7,6 +7,8 @@ const mainRouter = Router();
 
 mainRouter.get("/", mainController.getCategories);
 
+mainRouter.get("/categories", mainController.getCategories);
+
 mainRouter.post("/addCategory", mainController.postCategories);
 
 mainRouter.get("/consoles", mainController.getConsoles);

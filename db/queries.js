@@ -26,6 +26,11 @@ async function delCategory(id) {
   await pool.query("DELETE FROM categories WHERE id = $1", [id]);
 }
 
+async function checkItemsInCategory(categoryId) {
+  const result = await pool.query('SELECT COUNT(*) FROM consoles WHERE id = $1', [categoryId]);
+  return parseInt(result.rows[0].count);
+}
+
 module.exports = {
   getAllCategories,
   getAllConsoles,
@@ -33,4 +38,5 @@ module.exports = {
   insertConsole,
   delConsole,
   delCategory,
+  checkItemsInCategory,
   };

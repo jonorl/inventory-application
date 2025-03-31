@@ -12,6 +12,9 @@
   <body>
     <h1 class="title"><%=title%></h1>
     <a href="/consoles">Consoles</a>
+    <% if (messages) { %>
+    <div class="alert alert-danger"><%= messages %></div>
+    <% } %>
     <div class="form-container">
       <table>
         <thead>
