@@ -27,7 +27,7 @@ async function delCategory(id) {
 }
 
 async function checkItemsInCategory(categoryId) {
-  const result = await pool.query('SELECT COUNT(*) FROM consoles WHERE id = $1', [categoryId]);
+  const result = await pool.query('SELECT COUNT(*) FROM consoles WHERE category_id = $1', [categoryId]);
   return parseInt(result.rows[0].count);
 }
 
