@@ -11,6 +11,7 @@
   </head>
   <body>
     <h1 class="title"><%=title%></h1>
+    <a href="/">Categories</a>
     <table>
       <thead>
         <tr>
@@ -49,8 +50,14 @@
       />
       <label for="stock">Stock:</label><br />
       <input type="number" id="stock" name="stock" /><br />
-      <label for="categoryId">Category:</label><br />
-      <input type="number" id="categoryId" min="0" name="categoryId" /><br />
+      <!-- <label for="categoryId">Category:</label><br /> -->
+      <!-- <input type="number" id="categoryId" min="0" name="categoryId" /><br /> -->
+      <label for="categoryId">Category:</label>
+      <select id="categoryId" name="categoryId" required>
+        <% categories.forEach(category => { %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% }); %>
+      </select><br><br>
       <button class="submit" id="submit">Submit</button>
     </form>
   </body>

@@ -18,9 +18,11 @@ async function postCategories(req,res) {
 
 async function getConsoles(req, res) {
   const consoles = await db.getAllConsoles();
+  const categories = await db.getAllCategories();
   res.render("consoles", {
     title: "Consoles",
     consoles: consoles,
+    categories: categories,
   })
 }
 
